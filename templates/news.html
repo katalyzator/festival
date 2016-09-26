@@ -9,11 +9,11 @@
     <div class="row">
 
         {% for new in news %}
-            <div class="col-sm-8 col-sm-offset-2">
+            <div class="col-sm-10 col-sm-offset-2">
 
                 <div class="col-sm-8">
                 <a href="{{ new.get_absolute_url }}"><h1>{{ new.title }}</h1></a>
-            </div>
+                </div>
 
                 <div class="thumbnail">
 
@@ -21,7 +21,7 @@
                         {% for item in new.newsimage_set.all %}
 
                                 <div style="
-                            width: 400px;
+                            width: 700px;
                             margin: 0 auto;">
 
                                     <a href="{{ new.get_absolute_url }}">
