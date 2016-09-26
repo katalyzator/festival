@@ -1,0 +1,67 @@
+
+
+.grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 80px;
+}
+
+.group::before,
+.group::after {
+    content: "";
+    display: table;
+}
+
+.group::after {
+    clear: both;
+}
+
+.group {
+    clear: both;
+    *zoom: 1;
+}
+
+h5{
+	font-family: "GothamProBold", sans-serif;
+	font-size: 18px;
+	text-align: center;
+}
+
+.main{
+	display: inline-block;
+	width: 900px;
+	text-align: left;
+	/*font-size: 0;*/
+}
+
+.main li{
+		font-family: "GothamProRegular", sans-serif;
+	font-size: 16px;
+	color: #000;
+	margin: 20px 0;
+}
+
+.block{
+	float: left;
+	width: 400px;
+	border: 1px solid black;
+	margin-top: 20px;
+}
+
+.block:last-child{
+	border-left: 0;
+}
+
+.zag{
+	padding: 5px 30px;
+}
+
+.block ul{
+	/*padding-left: 20px;*/
+}
+
+/*li.group{
+	margin-top: -10px;
+}*/
+

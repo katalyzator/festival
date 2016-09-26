@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block head_title %}
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="row">
+
+        {% for new in news %}
+            <div class="col-sm-8 col-sm-offset-2">
+
+                <div class="col-sm-8">
+                <a href="{{ new.get_absolute_url }}"><h1>{{ new.title }}</h1></a>
+            </div>
+
+                <div class="thumbnail">
+
+                    {% if new.newsimage_set.all %}
+                        {% for item in new.newsimage_set.all %}
+
+                                <div style="
+                            width: 400px;
+                            margin: 0 auto;">
+
+                                    <a href="{{ new.get_absolute_url }}">
+                                        <img class="img-responsive" src="/media/{{ MEDIA_URL }}{{ item.image }}"/>
+                                    </a>
+                                </div>
+
+
+                        {% endfor %}
+
+                    {% else %}
+
+                        <div class="background_img_thumb"
+                             style="height: 100px;">
+
+                        </div>
+                    {% endif %}
+
+                    <div class="caption">
+
+                        <p>{{ new.description|truncatewords:15 }}</p>
+                        <p><a href="{{ new.get_absolute_url }}" class="btn btn-primary" role="button">Узнать подробнее</a>
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+
+            {% cycle "" "" "" "" "" "</div><br/><hr/><div class='row'>" %}
+        {% endfor %}
+
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load bootstrap_tags %}
+
+{% block content %}
+
+<h2 style="text-align: center">ЗАЯВКА
+на участие в VI МКФ стран СНГ, Балтии и Грузии</h2>
+<h2 style="text-align: center">«КЫРГЫЗСТАН – СТРАНА КОРОТКОМЕТРАЖНЫХ ФИЛЬМОВ»</h2>
+
+   <form action="{% url 'send_mail' %}" method="post">{% csrf_token %}
+    {{ form|as_bootstrap }}
+
+
+    <div class="form">
+      <div class="col-sm-6 col-sm-offset-3">
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Отправить</button>
+      </div>
+    </div>
+    </form>
+{% endblock %}
