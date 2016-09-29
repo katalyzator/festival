@@ -12,11 +12,11 @@
     <link rel="icon" href="../../favicon.ico">
 
 
-
     <title>Кинофестиваль</title>
 
 
-    <link type="text/css" rel="stylesheet" href="{% static 'materialize/bin/materialize.css' %}"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'materialize/bin/materialize.css' %}"
+          media="screen,projection"/>
     <!-- Bootstrap core CSS -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
 
@@ -26,11 +26,12 @@
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
 
+    <link rel="stylesheet"
+          href="https://www.gstatic.com/_/freebird/_/ss/k=freebird.v.gxldi2i4x1cp.L.F4.O/d=1/rs=AMjVe6hChaqpjNEAGfXmjSFVBmwiI53VoA"
+          data-id="_cl">
 
-    <link rel="stylesheet" href="https://www.gstatic.com/_/freebird/_/ss/k=freebird.v.gxldi2i4x1cp.L.F4.O/d=1/rs=AMjVe6hChaqpjNEAGfXmjSFVBmwiI53VoA" data-id="_cl">
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700&amp;subset=latin,vietnamese,latin-ext,cyrillic,greek,cyrillic-ext,greek-ext" rel="stylesheet" type="text/css">
-
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700&amp;subset=latin,vietnamese,latin-ext,cyrillic,greek,cyrillic-ext,greek-ext"
+          rel="stylesheet" type="text/css">
 
 
     <!-- Custom styles for this template -->
@@ -46,8 +47,8 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="{% static 'materialize/bin/materialize.js' %}"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'materialize/bin/materialize.js' %}"></script>
     <title>{% block head_title %}{% endblock %}Title</title>
 
 
@@ -55,7 +56,7 @@
 <body style="background-image: url('{% static 'img/background-mage.jpg' %}')">
 
 
-<div class="container" >
+<div class="container">
 
     {% include 'navbar.html' %}
 
@@ -65,6 +66,25 @@
 
     {% endblock %}
 </div>
+
+{% block footer %}
+    <footer>
+        <div class="grid">
+            <div class="contacts">Киностудия "Айтыш Фильм"<br>
+                aityshfilmst@gmail.com
+            </div>
+            <div class="contacts">Кыргызстан - страна<br> короткометражных фильмов<br>
+                kskf.short@gmail.com
+            </div>
+            <div class="contacts">Кыргызстан, Бишкек,<br>
+                Жибек-Жолу 625<br>
+                +996 312 344 875
+            </div>
+            <p>
+                © Kyrgyzstan country of short films</p>
+        </div>
+    </footer>
+{% endblock %}
 
 {#<script id="base-js" src="https://www.gstatic.com/_/freebird/_/js/k=freebird.v.ru.TJnY6FlIQBE.O/m=viewer_base/rt=j/d=1/rs=AMjVe6j_O9dcV-379gV6uTIfe_UETdwPJg"></script>#}
 </body>

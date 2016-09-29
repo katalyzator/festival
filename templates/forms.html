@@ -7,9 +7,10 @@
 <h2 style="text-align: center">ЗАЯВКА
 на участие в VI МКФ стран СНГ, Балтии и Грузии</h2>
 <h2 style="text-align: center">«КЫРГЫЗСТАН – СТРАНА КОРОТКОМЕТРАЖНЫХ ФИЛЬМОВ»</h2>
+<h4><div class="alert alert-danger" role="alert">Все поля обязательны к заполнению, иначе ваша заявка будет недействительна</div></h4>
+   <form action="{% url 'send_mail' %}" method="post" id="form-submit">{% csrf_token %}
 
-   <form action="{% url 'send_mail' %}" method="post">{% csrf_token %}
-    {{ form|as_bootstrap }}
+       {{ form|as_bootstrap }}
 
 
     <div class="form">
@@ -18,4 +19,20 @@
       </div>
     </div>
     </form>
+
+    <script>
+        $('#form-submit').on('submit', function() {
+            var is_valid = true;
+
+            $('input', this).each(function (index, obj) {
+                if ($(obj).val() == '') {
+                    is_valid = false;
+                    alert('Некоторые поля заполнены некорректно')
+                    $($(obj).parent()).addClass('form-group has-error');
+                }
+            });
+
+            return is_valid;
+        })
+    </script>
 {% endblock %}

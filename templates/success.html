@@ -1,1 +1,7 @@
-<h1>success</h1>
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="alert alert-success" role="alert">Поздравляем, вы успешно зарегистрировались на наш фестиваль.</div>
+    <a href="{% url 'main' %}"> <p>Назад</p> </a>
+
+{% endblock %}

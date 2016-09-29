@@ -109,7 +109,7 @@ def send_mail(request):
             mail = EmailMessage('Заявка', template.render(context), to=recipients)
             mail.content_subtype = 'html'
             mail.send()
-            return HttpResponse('.')
+            return render(request, 'success.html', {'form': form})
         else:
             return HttpResponse('error')
 
@@ -128,6 +128,7 @@ def about_view(request):
     template = 'about.html'
 
     return render(request, template, context)
+
 
 def reglament_view(request):
     context = {}

@@ -35,8 +35,6 @@ EMAIL_HOST_PASSWORD = 'izpodkaptal96'
 
 INSTALLED_APPS = [
     'django_forms_bootstrap',
-    'crispy_forms',
-    'materializecssform',
     'jet',
     'django.contrib.admin',
     'django.contrib.auth',

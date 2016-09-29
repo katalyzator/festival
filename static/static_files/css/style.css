@@ -1,5 +1,4 @@
 
-
 .grid {
     max-width: 1200px;
     margin: 0 auto;
@@ -65,3 +64,29 @@ h5{
 	margin-top: -10px;
 }*/
 
+footer{
+	background-color: #428bca;
+
+}
+
+footer .grid{
+	padding-bottom: 10px;
+}
+
+.contacts{
+	font-family: "OpenSansRegular", sans-serif;
+	font-size: 13px;
+	display: inline-block;
+	vertical-align: top;
+	width: 300px;
+	margin-top: 20px;
+
+}
+
+footer p{
+	font-family: "GothamProMedium", sans-serif;
+	font-size: 11px;
+	margin-top: 40px;
+	-ms-text-align-last: right;
+
+}
