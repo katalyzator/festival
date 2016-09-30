@@ -58,15 +58,16 @@ class RegistrationForm(forms.Form):
         self.fields['sinopsis'].label = "Синопсис*"
 
 
-# class DirectorDetailForm(forms.Form):
-#     name = forms.CharField(max_length=255, required=True)
-#     date = forms.CharField(max_length=255, required=True)
-#     education = forms.CharField(max_length=255, required=True)
-#     biography = forms.CharField(max_length=255, required=True)
-#     image = forms.FileField(upload_to='files/images', required=True)
-#     fromfilm = forms.FileField(upload_to='files/images', required=True)
-#
-#     def __init__(self, *args, **kwargs):
-#         super(DirectorDetailForm, self).__init__(*args, **kwargs)
-#         self.fields['name'].label = "ФИО"
-#         self.fields['date'].label = "Дата и место рождения"
+class DirectorDetailForm(forms.Form):
+    name = forms.CharField(max_length=255, required=True)
+    date = forms.CharField(max_length=255, required=True)
+    education = forms.CharField(max_length=255, required=True)
+    biography = forms.CharField(max_length=1000, required=True)
+
+    def __init__(self, *args, **kwargs):
+        super(DirectorDetailForm, self).__init__(*args, **kwargs)
+        self.fields['name'].label = "ФИО(Режиссера)"
+        self.fields['date'].label = "Дата и место рождения(режиссера)"
+        self.fields['education'].label = "Образование режиссера(место и год учебы)"
+        self.fields['biography'].label = "Краткая биография режиссера"
+

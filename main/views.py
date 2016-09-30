@@ -14,7 +14,7 @@ from django.views.decorators.csrf import csrf_exempt
 from festival.settings import BASE_DIR
 from .models import News, NewsImage
 
-from main.form import RegistrationForm
+from main.form import RegistrationForm, DirectorDetailForm
 
 
 # Create your views here.
@@ -64,6 +64,8 @@ def send_mail(request):
 
         form = RegistrationForm(request.POST)
 
+        director_form = DirectorDetailForm(request.POST)
+
         if form.is_valid():
             film_name = form.cleaned_data['film_name']  # название фильма
             country = form.cleaned_data['country']  # какую страну представляет фильм
@@ -109,12 +111,44 @@ def send_mail(request):
             mail = EmailMessage('Заявка', template.render(context), to=recipients)
             mail.content_subtype = 'html'
             mail.send()
-            return render(request, 'success.html', {'form': form})
+            return render(request, 'director_form.html', {'director_form': director_form})
         else:
             return HttpResponse('error')
 
     else:
         form = RegistrationForm()
+
+
+def send_director(request):
+
+    if request.method == 'POST':
+
+        director_form = DirectorDetailForm(request.POST)
+
+        if director_form.is_valid():
+            name = director_form.cleaned_data['name']
+            date = director_form.cleaned_data['date']
+            education = director_form.cleaned_data['education']
+            biography = director_form.cleaned_data['biography']
+
+            f = open(os.path.join(BASE_DIR, "templates/director.html"))
+
+            content = f.read()
+            f.close()
+
+            context = Context(dict(name=name, date=date, education=education, biography=biography))
+
+            template = Template(content)
+            recipients = ['web.coder96@gmail.com']
+            mail = EmailMessage('Заявка', template.render(context), to=recipients)
+            mail.content_subtype = 'html'
+            mail.send()
+            return render(request, 'success.html', {})
+        else:
+            return HttpResponse('error')
+
+    else:
+        director_form = DirectorDetailForm()
 
 
 def registrationView(request):

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% load bootstrap_tags %}
+
+{% block content %}
+
+<h2 style="text-align: center">ЗАЯВКА
+на участие в VI МКФ стран СНГ, Балтии и Грузии</h2>
+<h2 style="text-align: center">«КЫРГЫЗСТАН – СТРАНА КОРОТКОМЕТРАЖНЫХ ФИЛЬМОВ»</h2>
+<h4>
+Copy
+
+<div class="alert alert-success" role="alert">Вы успешно прошли первый этап регистрации, пожалуйста заполните поля ниже для полной регистрации</div></h4>
+   <h3>Сведение О Режиссере</h3>
+    <form action="{% url 'director_detail' %}" method="post" id="form-submit">{% csrf_token %}
+
+      {{ director_form|as_bootstrap }}
+
+
+    <div class="form">
+      <div class="col-sm-6 col-sm-offset-3">
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Отправить</button>
+      </div>
+    </div>
+    </form>
+
+    <script>
+        $('#form-submit').on('submit', function() {
+            var is_valid = true;
+
+            $('input', this).each(function (index, obj) {
+                if ($(obj).val() == '') {
+                    is_valid = false;
+                    alert('Некоторые поля заполнены некорректно')
+                    $($(obj).parent()).addClass('form-group has-error');
+                }
+            });
+
+            return is_valid;
+        })
+    </script>
+{% endblock %}
