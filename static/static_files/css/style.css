@@ -65,7 +65,7 @@ h5{
 }*/
 
 footer{
-	background-color: #428bca;
+	background-color: firebrick;
 
 }
 
@@ -80,6 +80,7 @@ footer .grid{
 	vertical-align: top;
 	width: 300px;
 	margin-top: 20px;
+	color: white;
 
 }
 

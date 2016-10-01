@@ -1120,12 +1120,13 @@ input, button, select, textarea {
 }
 
 a {
-    color: #428bca;
+    color: black;
+    font-size: 16px;
     text-decoration: none
 }
 
 a:hover, a:focus {
-    color: #2a6496;
+    color: black;
     text-decoration: underline
 }
 
@@ -3840,6 +3841,7 @@ textarea.input-group-sm > .form-control, textarea.input-group-sm > .input-group-
     padding-left: 0;
     margin-bottom: 0;
     list-style: none
+
 }
 
 .nav > li {
@@ -3977,7 +3979,7 @@ textarea.input-group-sm > .form-control, textarea.input-group-sm > .input-group-
 
 .nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
     color: #fff;
-    background-color: #428bca
+    background-color: firebrick;
 }
 
 .nav-stacked > li {
