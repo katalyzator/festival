@@ -4,8 +4,6 @@ import os
 from django.core.mail import EmailMessage
 from django.http import Http404
 from django.http import HttpResponse
-from django.http import HttpResponseRedirect
-from django.http import JsonResponse
 from django.shortcuts import render
 from django.template import Context
 from django.template import Template
