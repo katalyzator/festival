@@ -105,7 +105,7 @@ def send_mail(request):
                                    hudojnik=hudojnik, actors=actors, sinopsis=sinopsis
                                    ))
             template = Template(content)
-            recipients = ['web.coder96@gmail.com']
+            recipients = ['kskf.short@gmail.com']
             mail = EmailMessage('Заявка', template.render(context), to=recipients)
             mail.content_subtype = 'html'
             mail.send()
@@ -137,7 +137,7 @@ def send_director(request):
             context = Context(dict(name=name, date=date, education=education, biography=biography))
 
             template = Template(content)
-            recipients = ['web.coder96@gmail.com']
+            recipients = ['kskf.short@gmail.com']
             mail = EmailMessage('Заявка', template.render(context), to=recipients)
             mail.content_subtype = 'html'
             mail.send()
