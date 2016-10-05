@@ -25,7 +25,7 @@
             var is_valid = true;
 
             $('input', this).each(function (index, obj) {
-                if ($(obj).val() == '') {
+                if ($('label.control-label', obj.parent().parent()).hasClass('required-field')) {
                     is_valid = false;
                     alert('Некоторые поля заполнены некорректно')
                     $($(obj).parent()).addClass('form-group has-error');

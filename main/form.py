@@ -45,7 +45,7 @@ class RegistrationForm(forms.Form):
     author = forms.CharField(max_length=250, required=True)  # Авторы сценария
     operator = forms.CharField(max_length=250, required=True)
     producer = forms.CharField(max_length=250, required=True)
-    hudojnik = forms.CharField(max_length=250, required=True)
+    hudojnik = forms.CharField(max_length=250, required=False)
     actors = forms.CharField(max_length=1000, required=True)
     sinopsis = forms.CharField(max_length=250, required=True)
 
@@ -72,7 +72,7 @@ class RegistrationForm(forms.Form):
         self.fields['author'].label = "Автор сценария*"
         self.fields['operator'].label = "Оператор*"
         self.fields['producer'].label = "Продюсер*"
-        self.fields['hudojnik'].label = "Художник*"
+        self.fields['hudojnik'].label = "Художник" 
         self.fields['actors'].label = "Актеры*"
         self.fields['sinopsis'].label = "Синопсис*"
 
