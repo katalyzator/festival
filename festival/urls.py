@@ -24,7 +24,6 @@ urlpatterns = patterns('',
                        url(r'^$', 'main.views.main', name='main'),
                        url(r'^$', 'main.views.all', name='news'),
                        url(r'^partners/$', 'main.views.partners_view', name='partners'),
-
                        url(r'^news/(?P<id>\d+)/$', 'main.views.single', name='single_news'),
                        url(r'^registration/$', 'main.views.registrationView', name='registration'),
                        url(r'^reg/send/$', 'main.views.send_mail', name='send_mail'),
