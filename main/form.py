@@ -1,10 +1,29 @@
 # coding=utf-8
 from django import forms
 
+COUNTRY_CHOICES = (
+    ('Азербайджан', 'Азербайджан'),
+    ('Армения', 'Армения'),
+    ('Беларусия', 'Беларусия'),
+    ('Грузия', 'Грузия'),
+    ('Казахстан', 'Казахстан'),
+    ('Кыргызстан', 'Кыргызстан'),
+    ('Латвия', 'Латвия'),
+    ('Литва', 'Литва'),
+    ('Молдова', 'Молдова'),
+    ('Узбекистан', 'Узбекистан'),
+    ('Украина', 'Украина'),
+    ('Россия', 'Россия'),
+    ('Таджикистан', 'Таджикистан'),
+    ('Туркменистан', 'Туркменистан'),
+    ('Эстония', 'Эстония'),
+
+)
+
 
 class RegistrationForm(forms.Form):
     film_name = forms.CharField(max_length=250, required=True)  # название фильма
-    country = forms.CharField(max_length=250, required=True)  # какую страну представляет фильм
+    country = forms.ChoiceField(required=True, choices=COUNTRY_CHOICES)  # какую страну представляет фильм
     director = forms.CharField(max_length=250, required=True)  # режиссер фильма
     language = forms.CharField(max_length=250, required=True)  # оригинальный язык фильма
     lang_tit = forms.CharField(max_length=250, required=True)  # язык титров
@@ -70,4 +89,3 @@ class DirectorDetailForm(forms.Form):
         self.fields['date'].label = "Дата и место рождения(режиссера)"
         self.fields['education'].label = "Образование режиссера(место и год учебы)"
         self.fields['biography'].label = "Краткая биография режиссера"
-

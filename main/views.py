@@ -27,7 +27,7 @@ def main(request):
 def all(request):
     news = News.objects.all()
     context = {"news": news}
-    template = 'news.html'
+    template = 'main/index.html'
 
     return render(request, template, context)
 
@@ -118,7 +118,6 @@ def send_mail(request):
 
 
 def send_director(request):
-
     if request.method == 'POST':
 
         director_form = DirectorDetailForm(request.POST)
@@ -165,5 +164,12 @@ def about_view(request):
 def reglament_view(request):
     context = {}
     template = 'reglament.html'
+
+    return render(request, template, context)
+
+
+def partners_view(request):
+    context = {}
+    template = 'partners.html'
 
     return render(request, template, context)

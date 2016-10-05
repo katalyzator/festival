@@ -11,22 +11,26 @@
 
     <img src="{% static 'img/logo.png' %}">
 
-{#    <h1 style="text-align: center">Страны Участники</h1>#}
-{#    <div style="width: 100px; height: 100px">#}
-{#        <img src="{% static 'img/countries/1.png' %}">#}
-{#        <img src="{% static 'img/countries/2.png' %}">#}
-{#        <img src="{% static 'img/countries/3.png' %}">#}
-{#        <img src="{% static 'img/countries/4.png' %}">#}
-{#        <img src="{% static 'img/countries/5.png' %}">#}
-{#        <img src="{% static 'img/countries/6.png' %}">#}
-{#        <img src="{% static 'img/countries/7.png' %}">#}
-{#        <img src="{% static 'img/countries/8.png' %}">#}
-{#        <img src="{% static 'img/countries/9.png' %}">#}
-{#        <img src="{% static 'img/countries/10.png' %}">#}
-{#    </div>#}
-    <h1 style="text-align: center">Наши Партнеры</h1>
-
-    <img src="{% static 'img/partners.png' %}">
+    <div class="row">
+        {% for new in news %}
+            <div class="col-sm-12 col-md-6">
+                <div class="thumbnail">
+                    {% if new.newsimage_set.all %}
+                        {% for item in new.newsimage_set.all %}
+                            <a href="{{ new.get_absolute_url }}"><img src="/media/{{ MEDIA_URL }}{{ item.image }}"
+                                                                      alt="image"> </a>
+                        {% endfor %}
+                    {% endif %}
+                    <div class="caption">
+                        <h3><a href="{{ new.get_absolute_url }}"><h1>{{ new.title }}</h1></a></h3>
+                        <p>{{ new.description|truncatewords:15 }}</p>
+                        <p><a href="{{ new.get_absolute_url }}" class="btn btn-primary" role="button">Узнать
+                            подробнее</a></p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 
     {#    <div class="jumbotron">#}
     {#        <h1>Jumbotron heading</h1>#}
