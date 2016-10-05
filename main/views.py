@@ -18,19 +18,11 @@ from main.form import RegistrationForm, DirectorDetailForm
 # Create your views here.
 
 def main(request):
-    context = {}
-    template = 'main/index.html'
-
-    return render(request, template, context)
-
-
-def all(request):
     news = News.objects.all()
     context = {"news": news}
     template = 'main/index.html'
 
     return render(request, template, context)
-
 
 def single(request, id):
     try:
