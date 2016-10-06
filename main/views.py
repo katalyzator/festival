@@ -28,7 +28,6 @@ def main(request):
 
     return render(request, template, context)
 
-
 def single(request, id):
     try:
         news = News.objects.get(id=id)
