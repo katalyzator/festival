@@ -20,12 +20,12 @@
     </div>
     </form>
 
-    <script>
+<script>
         $('#form-submit').on('submit', function() {
             var is_valid = true;
 
             $('input', this).each(function (index, obj) {
-                if ($('label.control-label', obj.parent().parent()).hasClass('required-field')) {
+                if ($(obj).val() == '' ) {
                     is_valid = false;
                     alert('Некоторые поля заполнены некорректно')
                     $($(obj).parent()).addClass('form-group has-error');
@@ -35,4 +35,5 @@
             return is_valid;
         })
     </script>
+
 {% endblock %}
