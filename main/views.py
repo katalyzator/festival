@@ -1,30 +1,27 @@
 # coding=utf-8
+import StringIO
 import os
 
 from django.core.mail import EmailMessage
+from django.core.mail import EmailMultiAlternatives
 from django.http import Http404
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.template import Context
 from django.template import Template
+from django.template.loader import render_to_string
 from django.views.decorators.csrf import csrf_exempt
-
-from festival.settings import BASE_DIR
+from wkhtmltopdf.views import PDFTemplateResponse
+from xhtml2pdf import pisa
+from festival.settings import BASE_DIR, MEDIA_ROOT
 from .models import News, NewsImage
 
-from main.form import RegistrationForm, DirectorDetailForm
+from main.form import RegistrationForm
 
 
 # Create your views here.
 
 def main(request):
-    context = {}
-    template = 'main/index.html'
-
-    return render(request, template, context)
-
-
-def all(request):
     news = News.objects.all()
     context = {"news": news}
     template = 'main/index.html'
@@ -62,8 +59,6 @@ def send_mail(request):
 
         form = RegistrationForm(request.POST)
 
-        director_form = DirectorDetailForm(request.POST)
-
         if form.is_valid():
             film_name = form.cleaned_data['film_name']  # название фильма
             country = form.cleaned_data['country']  # какую страну представляет фильм
@@ -92,6 +87,11 @@ def send_mail(request):
             actors = form.cleaned_data['actors']
             sinopsis = form.cleaned_data['sinopsis']
 
+            name = form.cleaned_data['name']
+            date = form.cleaned_data['date']
+            education = form.cleaned_data['education']
+            biography = form.cleaned_data['biography']
+
             f = open(os.path.join(BASE_DIR, "templates/mail.html"))
 
             content = f.read()
@@ -102,50 +102,28 @@ def send_mail(request):
                                    filmtype=filmtype, url_film=url_film, company=company, address=address, \
                                    phone_number=phone_number, email=email, site=site, copyrighter=copyrighter, \
                                    contacts=contacts, author=author, operator=operator, producer=producer, \
-                                   hudojnik=hudojnik, actors=actors, sinopsis=sinopsis
+                                   hudojnik=hudojnik, actors=actors, sinopsis=sinopsis, name=name, date=date, \
+                                   education=education, biography=biography
                                    ))
             template = Template(content)
-            recipients = ['kskf.short@gmail.com']
-            mail = EmailMessage('Заявка', template.render(context), to=recipients)
+            recipients = ['web.coder96@gmail.com']
+            mail = EmailMultiAlternatives('Заявка', '', to=recipients)
             mail.content_subtype = 'html'
+            pdf_file_name = '%s.pdf' % email
+            pdf_file = open(os.path.join(MEDIA_ROOT, pdf_file_name), 'w+')
+            pdf_file.close()
+            pdf = PDFTemplateResponse(request, template='mail.html', filename=os.path.join(MEDIA_ROOT, pdf_file_name),
+                                      context=context)
+
+            mail.attach(pdf_file_name, pdf.rendered_content, 'application/pdf')
             mail.send()
-            return render(request, 'director_form.html', {'director_form': director_form})
+
+            return render(request, 'success.html', {})
         else:
-            return HttpResponse('error')
+            return render(request, 'error.html', {})
 
     else:
         form = RegistrationForm()
-
-
-def send_director(request):
-    if request.method == 'POST':
-
-        director_form = DirectorDetailForm(request.POST)
-
-        if director_form.is_valid():
-            name = director_form.cleaned_data['name']
-            date = director_form.cleaned_data['date']
-            education = director_form.cleaned_data['education']
-            biography = director_form.cleaned_data['biography']
-
-            f = open(os.path.join(BASE_DIR, "templates/director.html"))
-
-            content = f.read()
-            f.close()
-
-            context = Context(dict(name=name, date=date, education=education, biography=biography))
-
-            template = Template(content)
-            recipients = ['kskf.short@gmail.com']
-            mail = EmailMessage('Заявка', template.render(context), to=recipients)
-            mail.content_subtype = 'html'
-            mail.send()
-            return render(request, 'success.html', {})
-        else:
-            return HttpResponse('error')
-
-    else:
-        director_form = DirectorDetailForm()
 
 
 def registrationView(request):

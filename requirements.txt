@@ -1,0 +1,4 @@
+setuptools==28.2.0
+html5lib==1.0b8
+wkhtmltopdf
+django-wkhtmltopdf

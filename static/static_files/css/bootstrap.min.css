@@ -1233,7 +1233,7 @@ h4 small, .h4 small, h5 small, .h5 small, h6 small, .h6 small, h4 .small, .h4 .s
 }
 
 h1, .h1 {
-    font-size: 36px
+    font-size: 25px
 }
 
 h2, .h2 {
@@ -2684,9 +2684,9 @@ output {
 
     display: block;
     width: 600px;
-    height: 50px;
+    height: 40px;
     padding: 6px 12px;
-    font-size: 26px;
+    font-size: 20px;
     line-height: 1.42857143;
     color: #555;
     background-color: #fff;
@@ -3135,14 +3135,14 @@ textarea.input-lg, select[multiple].input-lg {
 
 .btn-primary {
     color: #fff;
-    background-color: cadetblue;
-    border-color: red;
+    background-color: darkslategray;
+    border-color: black;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
     color: #fff;
-    background-color: #3071a9;
-    border-color: #285e8e
+    background-color: darkgray;
+    border-color: darkslategray;
 }
 
 .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {

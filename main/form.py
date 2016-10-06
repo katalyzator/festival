@@ -37,7 +37,7 @@ class RegistrationForm(forms.Form):
     address = forms.CharField(max_length=250, required=False)  # Компания произвдитель
     phone_number = forms.CharField(max_length=250, required=False)  # номер телефона
     email = forms.EmailField(required=True)
-    site = forms.CharField(max_length=250, required=True)  # Сайт если есть
+    site = forms.CharField(max_length=250, required=False)  # Сайт если есть
 
     copyrighter = forms.CharField(max_length=250, required=True)  # pravoobladatel'
     contacts = forms.CharField(max_length=250, required=True)  # Контактные данные
@@ -45,9 +45,14 @@ class RegistrationForm(forms.Form):
     author = forms.CharField(max_length=250, required=True)  # Авторы сценария
     operator = forms.CharField(max_length=250, required=True)
     producer = forms.CharField(max_length=250, required=True)
-    hudojnik = forms.CharField(max_length=250, required=True)
+    hudojnik = forms.CharField(max_length=250, required=False)
     actors = forms.CharField(max_length=1000, required=True)
     sinopsis = forms.CharField(max_length=250, required=True)
+
+    name = forms.CharField(max_length=255, required=True)
+    date = forms.CharField(max_length=255, required=True)
+    education = forms.CharField(max_length=255, required=True)
+    biography = forms.CharField(max_length=1000, required=True)
 
     def __init__(self, *args, **kwargs):
         super(RegistrationForm, self).__init__(*args, **kwargs)
@@ -72,20 +77,13 @@ class RegistrationForm(forms.Form):
         self.fields['author'].label = "Автор сценария*"
         self.fields['operator'].label = "Оператор*"
         self.fields['producer'].label = "Продюсер*"
-        self.fields['hudojnik'].label = "Художник*"
+        self.fields['hudojnik'].label = "Художник"
         self.fields['actors'].label = "Актеры*"
         self.fields['sinopsis'].label = "Синопсис*"
 
-
-class DirectorDetailForm(forms.Form):
-    name = forms.CharField(max_length=255, required=True)
-    date = forms.CharField(max_length=255, required=True)
-    education = forms.CharField(max_length=255, required=True)
-    biography = forms.CharField(max_length=1000, required=True)
-
-    def __init__(self, *args, **kwargs):
-        super(DirectorDetailForm, self).__init__(*args, **kwargs)
         self.fields['name'].label = "ФИО(Режиссера)"
         self.fields['date'].label = "Дата и место рождения(режиссера)"
         self.fields['education'].label = "Образование режиссера(место и год учебы)"
         self.fields['biography'].label = "Краткая биография режиссера"
+
+

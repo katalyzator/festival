@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
-
+    'wkhtmltopdf',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -132,5 +132,7 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static", "media")
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static", "static_root")
 
 STATICFILES_DIRS = (
-    os.path.join(os.path.dirname(BASE_DIR), "kgskf.org", "static", "static_files"),
+    os.path.join(os.path.dirname(BASE_DIR), "festival", "static", "static_files"),
 )
+
+WKHTMLTOPDF_CMD = os.path.join(BASE_DIR, 'festival', 'wkhtmltopdf')

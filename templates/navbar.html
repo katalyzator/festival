@@ -1,5 +1,7 @@
+{% load staticfiles %}
 <div class="header clearfix">
     <nav style="color: black !important;">
+         <img src="{% static 'img/rsz_71logo.png' %}">
         <ul class="nav nav-pills pull-right">
             <li role="presentation"><a href="{% url 'main' %}">Главная</a></li>
             <li role="presentation"><a href="{% url 'partners' %}">Наши партнеры</a></li>
@@ -11,14 +13,14 @@
     </nav>
 
 
-    <script>
-        var current = '{{ request.path }}';
-
-        $('ul.nav > li').each(function (index, object) {
-
-            if ($('a', object).attr('href') == current) {
-                $(object).addClass('active')
-            }
-        })
-    </script>
+{#    <script>#}
+{#        var current = '{{ request.path }}';#}
+{##}
+{#        $('ul.nav > li').each(function (index, object) {#}
+{##}
+{#            if ($('a', object).attr('href') == current) {#}
+{#                $(object).addClass('active')#}
+{#            }#}
+{#        })#}
+{#    </script>#}
 </div>

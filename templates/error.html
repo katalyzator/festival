@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="alert alert-danger" role="alert">Вы заполнили не все поля которые трубется, пожалуйста вернитесь назад и заполните форму корректно.</div>
+    <a href="{% url 'registration' %}"> <p>Назад</p> </a>
+
+{% endblock %}
