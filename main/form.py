@@ -87,5 +87,3 @@ class RegistrationForm(forms.Form):
         self.fields['date'].label = "Дата и место рождения(режиссера)"
         self.fields['education'].label = "Образование режиссера(место и год учебы)"
         self.fields['biography'].label = "Краткая биография режиссера"
-
-

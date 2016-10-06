@@ -24,17 +24,16 @@
         </div>
     </form>
 
-<<<<<<< HEAD
+
+
+
     <script>
         $('#form-submit').on('submit', function () {
-=======
-<script>
-        $('#form-submit').on('submit', function() {
->>>>>>> 6741526df705959eb9ea01dfdbfca82a0e5cb7cc
+
             var is_valid = true;
 
             $('input', this).each(function (index, obj) {
-                if ($(obj).val() == '' ) {
+                if ($(obj).val() == '') {
                     is_valid = false;
                     alert('Некоторые поля заполнены некорректно')
                     $($(obj).parent()).addClass('form-group has-error');
