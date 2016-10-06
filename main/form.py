@@ -77,11 +77,9 @@ class RegistrationForm(forms.Form):
         self.fields['author'].label = "Автор сценария*"
         self.fields['operator'].label = "Оператор*"
         self.fields['producer'].label = "Продюсер*"
-<<<<<<< HEAD
+
         self.fields['hudojnik'].label = "Художник"
-=======
-        self.fields['hudojnik'].label = "Художник" 
->>>>>>> 6741526df705959eb9ea01dfdbfca82a0e5cb7cc
+
         self.fields['actors'].label = "Актеры*"
         self.fields['sinopsis'].label = "Синопсис*"
 
