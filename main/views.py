@@ -105,7 +105,7 @@ def send_mail(request):
                                    education=education, biography=biography
                                    ))
             template = Template(content)
-            recipients = ['web.coder96@gmail.com']
+            recipients = ['kskf.short@gmail.com']
             mail = EmailMultiAlternatives('Заявка', '', to=recipients)
             mail.content_subtype = 'html'
             pdf_file_name = '%s.pdf' % email
