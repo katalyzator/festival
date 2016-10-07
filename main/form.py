@@ -47,12 +47,12 @@ class RegistrationForm(forms.Form):
     producer = forms.CharField(max_length=250, required=True)
     hudojnik = forms.CharField(max_length=250, required=False)
     actors = forms.CharField(max_length=1000, required=True)
-    sinopsis = forms.CharField(max_length=250, required=True)
+    sinopsis = forms.CharField(widget=forms.Textarea)
 
     name = forms.CharField(max_length=255, required=True)
     date = forms.CharField(max_length=255, required=True)
     education = forms.CharField(max_length=255, required=True)
-    biography = forms.CharField(max_length=1000, required=True)
+    biography = forms.CharField(widget=forms.Textarea)
 
     def __init__(self, *args, **kwargs):
         super(RegistrationForm, self).__init__(*args, **kwargs)

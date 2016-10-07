@@ -1,18 +1,17 @@
 # coding=utf-8
-import StringIO
+
 import os
 
-from django.core.mail import EmailMessage
 from django.core.mail import EmailMultiAlternatives
 from django.http import Http404
-from django.http import HttpResponse
+
 from django.shortcuts import render
 from django.template import Context
 from django.template import Template
-from django.template.loader import render_to_string
+
 from django.views.decorators.csrf import csrf_exempt
 from wkhtmltopdf.views import PDFTemplateResponse
-from xhtml2pdf import pisa
+
 from festival.settings import BASE_DIR, MEDIA_ROOT
 from .models import News, NewsImage
 
@@ -27,6 +26,7 @@ def main(request):
     template = 'main/index.html'
 
     return render(request, template, context)
+
 
 def single(request, id):
     try:
@@ -104,7 +104,7 @@ def send_mail(request):
                                    hudojnik=hudojnik, actors=actors, sinopsis=sinopsis, name=name, date=date, \
                                    education=education, biography=biography
                                    ))
-            template = Template(content)
+
             recipients = ['kskf.short@gmail.com']
             mail = EmailMultiAlternatives('Заявка', '', to=recipients)
             mail.content_subtype = 'html'
