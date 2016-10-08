@@ -9,16 +9,10 @@
 {% block content %}
 
 
-<<<<<<< HEAD
 
-
-=======
-    <img src="{% static 'img/logo.png' %}">
-	<br><br>
->>>>>>> 6741526df705959eb9ea01dfdbfca82a0e5cb7cc
     <div class="row">
         {% for new in news %}
-            <div class="col-sm-12 col-md-6">
+            <div class="col-sm-10 col-md-4">
                 <div class="thumbnail">
                     {% if new.newsimage_set.all %}
                         {% for item in new.newsimage_set.all %}
@@ -27,8 +21,8 @@
                         {% endfor %}
                     {% endif %}
                     <div class="caption">
-                        <h3><a href="{{ new.get_absolute_url }}"><h1>{{ new.title }}</h1></a></h3>
-                        <p>{{ new.description|truncatewords:15 }}</p>
+                        <a href="{{ new.get_absolute_url }}"><p>{{ new.title }}</p></a>
+                        <p>{{ new.description|truncatewords:10 }}</p>
                         <p><a href="{{ new.get_absolute_url }}" class="btn btn-primary" role="button">Узнать
                             подробнее</a></p>
                     </div>

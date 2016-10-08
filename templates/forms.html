@@ -4,14 +4,14 @@
 
 {% block content %}
 
-    <h2 style="text-align: center">ЗАЯВКА
-        на участие в VI МКФ стран СНГ, Балтии и Грузии</h2>
-    <h2 style="text-align: center">«КЫРГЫЗСТАН – СТРАНА КОРОТКОМЕТРАЖНЫХ ФИЛЬМОВ»</h2>
-    <h4>
+    <strong><p style="text-align: center; font-size: 18px">ЗАЯВКА
+        на участие в VI МКФ стран СНГ, Балтии и Грузии</p>
+    <p style="text-align: center; font-size: 18px;">«КЫРГЫЗСТАН – СТРАНА КОРОТКОМЕТРАЖНЫХ ФИЛЬМОВ»</p></strong>
+    <p>
         <div class="alert alert-danger" role="alert">Все поля обязательны к заполнению, иначе ваша заявка будет
             недействительна
         </div>
-    </h4>
+    </p>
     <form action="{% url 'send_mail' %}" method="post" id="form-submit">{% csrf_token %}
 
         {{ form|as_bootstrap }}

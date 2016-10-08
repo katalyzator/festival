@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load staticfiles %}
+
 {% block content %}
     <main>
         <div class="grid">
@@ -38,6 +40,7 @@
                             <li>Специальный приз жюри
                             </li>
                             <li>Приз зрительских симпатий</li>
+                            <li></li>
                         </ul>
                     </div>
 
@@ -51,6 +54,7 @@
                             <li>Специальный приз жюри
                             </li>
                             <li>Приз зрительских симпатий</li>
+                            <li>Лучшее звуковое оформление</li>
                         </ul>
                     </div>
                 </li>
@@ -73,9 +77,9 @@
                 <li><strong>ДЛЯ УЧАСТИЯ В ОТБОРЕ НЕОБХОДИМО ПРЕДСТАВИТЬ СЛЕДУЮЩИЕ МАТЕРИАЛЫ:</strong>
                     <ul>
                         <li>Заявку на участие можете заполнить <a href="{% url 'registration' %}">
-                            <strong>онлайн </strong> </a>
+                            <strong style="color: blue; text-decoration: underline;">онлайн </strong> </a>
                         </li>
-                        <li>Или заполнить заявку на участие в электронном виде и ссылку на фильм с паролем<br>
+                        <li>Или <a href="{% static 'Заявка КСКФ 2016.pdf' %}" style="text-decoration: underline; color: blue;"><strong>скачать</strong></a> и заполнить заявку на участие в электронном виде и ссылку на фильм с паролем<br>
                             (принимается только VIMEO и DROPBOX, не больше 1,5 GB) отправить по адресу:<br>
                             <a href="">kskf.short@gmail.com</a>
                         </li>

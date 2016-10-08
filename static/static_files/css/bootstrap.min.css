@@ -3135,13 +3135,13 @@ textarea.input-lg, select[multiple].input-lg {
 
 .btn-primary {
     color: #fff;
-    background-color: darkslategray;
-    border-color: black;
+    background-color: dimgray;
+    border-color: blueviolet;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
     color: #fff;
-    background-color: darkgray;
+    background-color: red;
     border-color: darkslategray;
 }
 
