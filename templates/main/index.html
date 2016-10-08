@@ -10,7 +10,9 @@
 
 
 
+
 	<br><br>
+
 
     <div class="row">
         {% for new in news %}
@@ -23,8 +25,8 @@
                         {% endfor %}
                     {% endif %}
                     <div class="caption">
-                        <h3><a href="{{ new.get_absolute_url }}"><h1>{{ new.title }}</h1></a></h3>
-                        <p>{{ new.description|truncatewords:15 }}</p>
+                        <a href="{{ new.get_absolute_url }}"><p>{{ new.title }}</p></a>
+                        <p>{{ new.description|truncatewords:10 }}</p>
                         <p><a href="{{ new.get_absolute_url }}" class="btn btn-primary" role="button">Узнать
                             подробнее</a></p>
                     </div>
