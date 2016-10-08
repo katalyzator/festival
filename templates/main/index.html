@@ -9,16 +9,12 @@
 {% block content %}
 
 
-<<<<<<< HEAD
 
-
-=======
-    <img src="{% static 'img/logo.png' %}">
 	<br><br>
->>>>>>> 6741526df705959eb9ea01dfdbfca82a0e5cb7cc
+
     <div class="row">
         {% for new in news %}
-            <div class="col-sm-12 col-md-6">
+            <div class="col-sm-10 col-md-4">
                 <div class="thumbnail">
                     {% if new.newsimage_set.all %}
                         {% for item in new.newsimage_set.all %}
