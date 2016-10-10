@@ -1,4 +1,9 @@
 
+.hover_img {
+	float: left;
+	margin: 10px 25px 25px 0;
+}
+
 .grid {
     max-width: 1200px;
     margin: 0 auto;
