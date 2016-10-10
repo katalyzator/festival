@@ -4,6 +4,10 @@
 	margin: 10px 25px 25px 0;
 }
 
+.blog-outer {
+	margin-bottom: 30px;
+}
+
 .grid {
     max-width: 1200px;
     margin: 0 auto;
