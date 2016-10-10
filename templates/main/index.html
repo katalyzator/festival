@@ -10,26 +10,51 @@
 
 
 
+{##}
+{#    {% for new in news %}#}
+{##}
+{#        <div class="img-responsive">#}
+{#            {% if new.newsimage_set.all %}#}
+{#                {% for item in new.newsimage_set.all %}#}
+{#                    <a href="{{ new.get_absolute_url }}"><img src="/media/{{ MEDIA_URL }}{{ item.image }}"#}
+{#                                                              alt="image"> </a>#}
+{#                {% endfor %}#}
+{#            {% endif %}#}
+{##}
+{#            <a href="{{ new.get_absolute_url }}"><p>{{ new.title }}</p></a>#}
+{#            <p>{{ new.description|truncatewords:10 }}</p>#}
+{#            <p><a href="{{ new.get_absolute_url }}" class="btn btn-primary" role="button">Узнать#}
+{#                подробнее</a></p>#}
+{##}
+{#        </div>#}
+{##}
+{#    {% endfor %}#}
+
     <div class="row">
         {% for new in news %}
-            <div class="col-sm-10 col-md-4">
-                <div class="thumbnail">
+            <div class="blog-outer">
+                <div class="shadow-wrapper">
                     {% if new.newsimage_set.all %}
                         {% for item in new.newsimage_set.all %}
-                            <a href="{{ new.get_absolute_url }}"><img src="/media/{{ MEDIA_URL }}{{ item.image }}"
-                                                                      alt="image"> </a>
+                            <div class="hover_img">
+                                <img src="/media/{{ MEDIA_URL }}{{ item.image }}" alt="">
+
+                            </div>
                         {% endfor %}
                     {% endif %}
-                    <div class="caption">
-                        <a href="{{ new.get_absolute_url }}"><p>{{ new.title }}</p></a>
-                        <p>{{ new.description|truncatewords:10 }}</p>
-                        <p><a href="{{ new.get_absolute_url }}" class="btn btn-primary" role="button">Узнать
-                            подробнее</a></p>
-                    </div>
+                </div>
+                <div class="blog-wrap">
+
+                    <a href="{{ new.get_absolute_url }}" class="blog-title">{{ new.title }}</a>
+                    <p>{{ new.description|truncatewords:10 }}</p>
+                    <p><a href="{{ new.get_absolute_url }}" class="btn btn-primary">Узнать больше<i
+                            class="fa fa-long-arrow-right"></i></a></p>
                 </div>
             </div>
         {% endfor %}
     </div>
+
+
 
 
 {% endblock %}
