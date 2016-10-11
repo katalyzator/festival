@@ -3,13 +3,20 @@
     <nav style="color: black !important;">
         <img src="{% static 'img/rsz_71logo.png' %}">
         <ul class="nav nav-pills pull-right" style="font-size: medium;">
-            <li role="presentation"><a href="{% url 'main' %}">Главная</a></li>
+            <li role="presentation"><a href="{% url 'main' %}">НОВОСТИ</a></li>
+            <li class="dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                   aria-expanded="false">О НАС <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li role="presentation"><a href="{% url 'reglament' %}">О Фестивале</a></li>
+                    <li role="presentation"><a href="{% url 'about' %}">Команда Фестиваля</a></li>
+                </ul>
+            </li>
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                   aria-expanded="false">Фестиваль <span class="caret"></span></a>
+                   aria-expanded="false">ФЕСТИВАЛЬ <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li role="presentation"><a href="{% url 'registration' %}"><strong>Прием заявок на 2016 МКФ (электронная
-                        заполнение анкеты)</strong></a></li>
+                    <li role="presentation"><a href="{% url 'registration' %}">Регламент и заявка 2016</a></li>
                     <li role="presentation"><a href="#">2015 фестиваль</a></li>
                     <li role="presentation"><a href="#">2014 фестиваль</a></li>
                     <li role="presentation"><a href="#">2013 фестиваль</a></li>
@@ -20,7 +27,7 @@
 
              <li class="dropdown" style="text-align: center;">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                   aria-expanded="false">Наши спонсоры <br> и партнеры<span class="caret"></span></a>
+                   aria-expanded="false">СПОНСОРЫ <br> И ПАРТНЕРЫ<span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <li role="presentation"><a href="{% url 'partners' %}">Партнеры</a></li>
 
@@ -29,22 +36,17 @@
 
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                   aria-expanded="false">Медиа<span class="caret"></span></a>
+                   aria-expanded="false">МЕДИА<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li role="presentation"><a href="#">Пресс-релизы</a></li>
+                    <li role="presentation"><a href="#">ФОТО ГАЛЕРЕЯ</a></li>
+                    <li role="presentation"><a href="#">ВИДЕО</a></li>
 
                 </ul>
             </li>
 
-            <li class="dropdown">
-                <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                   aria-expanded="false">О Нас <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li role="presentation"><a href="{% url 'reglament' %}"><strong>Регламент фестиваля</strong></a></li>
-                    <li role="presentation"><a href="{% url 'about' %}">Команда Фестиваля</a></li>
+            <li role="presentation"><a href="#">КОНТАКТЫ</a></li>
 
-                </ul>
-            </li>
+
 
         </ul>
     </nav>
