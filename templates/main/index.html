@@ -40,9 +40,7 @@
                         {% for item in new.newsimage_set.all %}
                             <div class="hover_img">
                                 <img src="/media/{{ MEDIA_URL }}{{ item.image }}" alt="">
-                                <p style="margin-top: 5px;"><a href="{{ new.get_absolute_url }}"
-                                                               class="btn btn-primary">Узнать больше<i
-                                        class="fa fa-long-arrow-right"></i></a></p>
+
                             </div>
                         {% endfor %}
                     {% endif %}
@@ -51,6 +49,9 @@
 
                     <a href="{{ new.get_absolute_url }}" class="blog-title">{{ new.title }}</a>
                     <p>{{ new.description }}</p>
+                     <p style="margin-top: 5px;"><a href="{{ new.get_absolute_url }}"
+                                                               class="btn btn-primary">Узнать больше<i
+                                        class="fa fa-long-arrow-right"></i></a></p>
 
                 </div>
             </div>
