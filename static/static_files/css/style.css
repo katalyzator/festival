@@ -1,12 +1,24 @@
 
 .hover_img {
-	float: left;
+
 	margin: 10px 25px 25px 0;
 }
 
 .blog-outer {
+
 	margin-bottom: 40px;
 	margin-top: 20px;
+}
+
+.shadow-wrapper {
+	vertical-align: top;
+	display: inline-block;
+}
+
+.blog-wrap {
+	vertical-align: top;
+	width: 500px;
+	display: inline-block;
 }
 
 .grid {
