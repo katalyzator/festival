@@ -32,7 +32,8 @@ urlpatterns = patterns('',
                        url(r'festival2012/$', 'main.views.coah_view2012', name='festival2012'),
                        url(r'festival2013/$', 'main.views.coah_view2013', name='festival2013'),
                        url(r'festival2014/$', 'main.views.coah_view2014', name='festival2014'),
-                       url(r'aitysh/$', 'main.views.aitysh_view', name='fond_view')
+                       url(r'aitysh/$', 'main.views.aitysh_view', name='fond_view'),
+                       url(r'contacts/$', 'main.views.contacts_view', name='contacts')
 
                        )
 

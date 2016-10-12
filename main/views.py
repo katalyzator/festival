@@ -185,3 +185,10 @@ def aitysh_view(request):
     template = 'fond_aitysh.html'
 
     return render(request, template, context)
+
+
+def contacts_view(request):
+    context = {}
+    template = 'contacts.html'
+
+    return render(request, template, context)
