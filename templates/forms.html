@@ -110,7 +110,8 @@
         </div>
     </main>
     <p>
-    <div class="alert alert-danger" role="alert">Все поля обязательны к заполнению, иначе ваша заявка будет
+    <div class="alert alert-danger" role="alert" style="text-align: center">Все поля обязательны к заполнению, иначе
+        ваша заявка будет
         недействительна
     </div>
     </p>
@@ -118,16 +119,12 @@
 
         {{ form|as_bootstrap }}
 
-
         <div class="form">
             <div class="col-sm-6 col-sm-offset-3">
                 <button type="submit" class="btn btn-primary btn-lg btn-block">Отправить</button>
             </div>
         </div>
     </form>
-
-
-
 
     <script>
         $('#form-submit').on('submit', function () {

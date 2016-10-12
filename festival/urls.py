@@ -27,7 +27,8 @@ urlpatterns = patterns('',
                        url(r'^registration/$', 'main.views.registrationView', name='registration'),
                        url(r'^reg/send/$', 'main.views.send_mail', name='send_mail'),
                        url(r'about/$', 'main.views.about_view', name='about'),
-                       url(r'reglament/$', 'main.views.reglament_view', name='reglament')
+                       url(r'reglament/$', 'main.views.reglament_view', name='reglament'),
+                       url(r'festival2011', 'main.views.coah_view2011', name='festival2011')
 
                        )
 

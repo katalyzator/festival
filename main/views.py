@@ -150,3 +150,10 @@ def partners_view(request):
     template = 'partners.html'
 
     return render(request, template, context)
+
+
+def coah_view2011(request):
+    context = {}
+    template = 'main/2011.html'
+
+    return render(request, template, context)

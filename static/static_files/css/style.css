@@ -113,3 +113,27 @@ footer p{
 	-ms-text-align-last: right;
 
 }
+
+.container2 > li {
+	margin: 5px 10px 5px 10px;
+}
+
+.block3 {
+	margin: 40px 0;
+	text-align: center;
+}
+
+.group::before,
+.group::after {
+   content: "";
+   display: table;
+}.group::after {
+   clear: both;
+}.group {
+   clear: both;
+   *zoom: 1;
+}
+
+.block2 {
+	margin-top: 35px;
+}
