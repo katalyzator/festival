@@ -157,3 +157,17 @@ def coah_view2011(request):
     template = 'main/2011.html'
 
     return render(request, template, context)
+
+
+def coah_view2012(request):
+    context = {}
+    template = 'main/2012.html'
+
+    return render(request, template, context)
+
+
+def coah_view2013(request):
+    context = {}
+    template = 'main/2013.html'
+
+    return render(request, template, context)
