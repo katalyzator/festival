@@ -171,3 +171,17 @@ def coah_view2013(request):
     template = 'main/2013.html'
 
     return render(request, template, context)
+
+
+def coah_view2014(request):
+    context = {}
+    template = 'main/2014.html'
+
+    return render(request, template, context)
+
+
+def aitysh_view(request):
+    context = {}
+    template = 'fond_aitysh.html'
+
+    return render(request, template, context)
