@@ -199,3 +199,30 @@ def contacts_view(request):
     template = 'contacts.html'
 
     return render(request, template, context)
+
+
+def photos2011_view(request):
+    context = {'n': range(1, 30)}
+    template = 'photo_2011.html'
+
+    return render(request, template, context)
+
+def photos2012_view(request):
+    context = {'n': range(1, 78)}
+    template = 'photo_2012.html'
+
+    return render(request, template, context)
+
+
+def photos2013_view(request):
+    context = {'n': range(1, 30)}
+    template = 'photo_2013.html'
+
+    return render(request, template, context)
+
+
+def photogallery_view(request):
+    context = {}
+    template = 'photogallery.html'
+
+    return render(request, template, context)

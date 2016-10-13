@@ -34,7 +34,11 @@ urlpatterns = patterns('',
                        url(r'festival2014/$', 'main.views.coah_view2014', name='festival2014'),
                        url(r'festival2015/$', 'main.views.coah_view2015', name='festival2015'),
                        url(r'aitysh/$', 'main.views.aitysh_view', name='fond_view'),
-                       url(r'contacts/$', 'main.views.contacts_view', name='contacts')
+                       url(r'contacts/$', 'main.views.contacts_view', name='contacts'),
+                       url(r'photos2011/$', 'main.views.photos2011_view', name='photos_2011'),
+                       url(r'photos2012/$', 'main.views.photos2012_view', name='photos_2012'),
+                       url(r'photos2013/$', 'main.views.photos2013_view', name='photos_2013'),
+                       url(r'gallery/$', 'main.views.photogallery_view', name='gallery')
 
                        )
 

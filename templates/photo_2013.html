@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block content %}
+    {% for i in n %}
+        <img src="/static/img/photos_2011/{{ i }}.jpg"
+             style="width: 400px; height: 400px; margin: 10px 0; border: 10px solid darkred;">
+    {% endfor %}
+{% endblock %}
