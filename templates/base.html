@@ -9,7 +9,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="{%  static 'img/favicon.ico' %}">
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
 
 
     <title>Кинофестиваль</title>
@@ -55,9 +55,19 @@
 
 </head>
 <body style="background-color: white;">
+<div class="social_button" style="position: fixed; margin-top: 250px;">
+    <a href="https://facebook.com/kskf.filmfest.kg" target="_blank"> <img src="{% static 'img/facebook.png' %}"
+                                                          style="width: 50px; height: 50px;"> </a> <br>
+    <a href="https://www.youtube.com/channel/UCAl4JCcxD4UMWR67i0WBpRQ" target="_blank"> <img src="{% static 'img/youtube.png' %}"
+                                                                             style="width: 50px; height: 50px; margin-top: 5px;">
+    </a><br>
+    <a href="https://www.instagram.com/aityshfilm" target="_blank"> <img src="{% static 'img/instagramm.png' %}"
+                                                         style="width: 50px; height: 50px; margin-top: 5px;"></a>
+</div>
 
 
 <div class="container">
+
 
     {% include 'navbar.html' %}
 

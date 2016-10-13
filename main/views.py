@@ -21,7 +21,7 @@ from main.form import RegistrationForm
 # Create your views here.
 
 def main(request):
-    news = News.objects.all()
+    news = News.objects.all().order_by('-timestamp')
     context = {"news": news}
     template = 'main/index.html'
 

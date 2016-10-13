@@ -39,7 +39,7 @@
                     {% if new.newsimage_set.all %}
                         {% for item in new.newsimage_set.all %}
                             <div class="hover_img">
-                                <img src="/media/{{ MEDIA_URL }}{{ item.image }}" alt="">
+                                <img src="/media/{{ MEDIA_URL }}{{ item.image }}" alt="" style="margin-left: 20px;">
 
                             </div>
                         {% endfor %}
