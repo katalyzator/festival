@@ -215,7 +215,7 @@ def photos2012_view(request):
 
 
 def photos2013_view(request):
-    context = {'n': range(1, 30)}
+    context = {'n': range(1, 123)}
     template = 'photo_2013.html'
 
     return render(request, template, context)
