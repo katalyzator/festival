@@ -1,7 +1,59 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
+
+
 
 {% block content %}
-<a href="{% url 'photos_2011' %}"><h3 style="color: blue; text-decoration: underline;">Фестиваль - 2011</h3></a><br>
-<a href="{% url 'photos_2012' %}"><h3 style="color: blue; text-decoration: underline;">Фестиваль - 2012</h3></a><br>
-<a href="{% url 'photos_2013' %}"><h3 style="color: blue; text-decoration: underline; margin-bottom: 250px;">Фестиваль - 2013</h3></a>
+
+    {#<a href="{% url 'photos_2012' %}"><h3 style="color: blue; text-decoration: underline;">Фестиваль - 2012</h3></a><br>#}
+    {#<a href="{% url 'photos_2013' %}"><h3 style="color: blue; text-decoration: underline; margin-bottom: 250px;">Фестиваль - 2013</h3></a>#}
+    <h3 style="color: blue; text-decoration: underline; text-align: center;">Фестиваль - 2011</h3>
+    <br>
+    <div class="nurslide">
+        {% for i in n %}
+            <div class="sl_slide">
+                <img src="/static/img/photos_2011/{{ i }}.jpg">
+            </div>
+
+        {% endfor %}
+    </div>
+    <br>
+    <h3 style="color: blue; text-decoration: underline; text-align: center;">Фестиваль - 2012</h3>
+    <div class="nurslide">
+        {% for i in n %}
+            <div class="sl_slide">
+                <img src="/static/img/photos_2012/{{ i }}.jpg">
+            </div>
+
+        {% endfor %}
+    </div>
+
+    <br>
+    <h3 style="color: blue; text-decoration: underline; text-align: center;">Фестиваль - 2013</h3>
+    <div class="nurslide">
+        {% for i in n %}
+            <div class="sl_slide">
+                <img src="/static/img/photos_2013/{{ i }}.jpg">
+            </div>
+
+        {% endfor %}
+    </div>
+    <br>
+    <h3 style="color: blue; text-decoration: underline; text-align: center;">Фестиваль - 2014</h3>
+    <div class="nurslide">
+        {% for i in n %}
+            <div class="sl_slide">
+                <img src="/static/img/photos_2014/{{ i }}.jpg" style="height: 400px;">
+            </div>
+
+        {% endfor %}
+    </div>
+
+    <br>
+    <br>
+
+
+
+
+
 {% endblock %}

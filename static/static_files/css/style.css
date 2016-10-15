@@ -1,4 +1,18 @@
 
+@font-face {
+    font-family: "TimesNewRomanRegular";
+    src: url("../fonts/TimesNewRomanRegular.eot");
+    src: url("../fonts/TimesNewRomanRegular.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/TimesNewRomanRegular.woff") format("woff"),
+    url("../fonts/TimesNewRomanRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+body {
+	font-family: "TimesNewRomanRegular", serif !important;
+}
+
 .hover_img {
 
 	margin: 10px 25px 25px 0;
@@ -135,6 +149,29 @@ footer p{
    *zoom: 1;
 }
 
+ .nurslide {
+	 margin: 0 auto;
+	 width: 717px;
+
+
+ }
+
+
+
 .block2 {
 	margin-top: 35px;
+}
+
+.slick-prev, .slick-next{
+  z-index: 1001;
+  width: 32px;
+  height: 32px;
+}.slick-prev:before, .slick-next:before {
+ font-size: 32px;
+ text-shadow: 1px 1px 1px rgba(0, 0, 0, .4);
+}.slick-prev{
+ left: 25px;
+
+}.slick-next{
+   right: 25px;
 }

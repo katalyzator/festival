@@ -222,7 +222,7 @@ def photos2013_view(request):
 
 
 def photogallery_view(request):
-    context = {}
+    context = {'n': range(1, 30)}
     template = 'photogallery.html'
 
     return render(request, template, context)
