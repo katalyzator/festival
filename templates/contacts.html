@@ -3,10 +3,19 @@
 {% load staticfiles %}
 
 {% block content %}
-    
+
+    <div style="width: 400px; float: left;">
+        <img src="{% static 'img/2.png' %}" style="width: 400px; height: 400px;">
+    </div>
+    <div style="width: 500px; float: right; margin-top: 100px;">
+        <p style="text-align: right"><strong>Кыргызстан, г. Бишкек, ул. Жибек Жолу, 625.
+            Киностудия «Айтыш Фильм»
+            Email: kskf.short@gmail.com</strong></p>
+    </div>
+    <br><br>
+
+
     <img src="{% static 'img/map.png' %}">
     <br><br>
-    <p style="text-align: right"><strong>Кыргызстан, г. Бишкек, ул. Жибек Жолу, 625.
-        Киностудия «Айтыш Фильм»
-        Email: kskf.short@gmail.com</strong></p>
+
 {% endblock %}

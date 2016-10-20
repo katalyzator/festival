@@ -38,6 +38,7 @@ urlpatterns = patterns('',
                        url(r'photos2011/$', 'main.views.photos2011_view', name='photos_2011'),
                        url(r'photos2012/$', 'main.views.photos2012_view', name='photos_2012'),
                        url(r'photos2013/$', 'main.views.photos2013_view', name='photos_2013'),
+                       url(r'photos2014/$', 'main.views.photos2014_view', name='photos_2014'),
                        url(r'gallery/$', 'main.views.photogallery_view', name='gallery')
 
                        )

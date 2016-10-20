@@ -203,20 +203,28 @@ def contacts_view(request):
 
 def photos2011_view(request):
     context = {'n': range(1, 30)}
-    template = 'photo_2011.html'
+    template = 'gallery/2011.html'
 
     return render(request, template, context)
 
+
 def photos2012_view(request):
     context = {'n': range(1, 78)}
-    template = 'photo_2012.html'
+    template = 'gallery/2012.html'
 
     return render(request, template, context)
 
 
 def photos2013_view(request):
     context = {'n': range(1, 123)}
-    template = 'photo_2013.html'
+    template = 'gallery/2013.html'
+
+    return render(request, template, context)
+
+
+def photos2014_view(request):
+    context = {'n': range(1, 100)}
+    template = 'gallery/2014.html'
 
     return render(request, template, context)
 

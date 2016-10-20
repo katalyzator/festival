@@ -7,7 +7,8 @@
 
     {#<a href="{% url 'photos_2012' %}"><h3 style="color: blue; text-decoration: underline;">Фестиваль - 2012</h3></a><br>#}
     {#<a href="{% url 'photos_2013' %}"><h3 style="color: blue; text-decoration: underline; margin-bottom: 250px;">Фестиваль - 2013</h3></a>#}
-    <h3 style="color: blue; text-decoration: underline; text-align: center;">Фестиваль - 2011</h3>
+    <a href="{% url 'photos_2011' %}"><h3 style="color: blue; text-decoration: underline; text-align: center;">Фестиваль
+        - 2011</h3></a>
     <br>
     <div class="nurslide">
         {% for i in n %}
@@ -18,7 +19,8 @@
         {% endfor %}
     </div>
     <br>
-    <h3 style="color: blue; text-decoration: underline; text-align: center;">Фестиваль - 2012</h3>
+    <a href="{% url 'photos_2012' %}"><h3 style="color: blue; text-decoration: underline; text-align: center;">Фестиваль
+        - 2012</h3></a>
     <div class="nurslide">
         {% for i in n %}
             <div class="sl_slide">
@@ -29,7 +31,8 @@
     </div>
 
     <br>
-    <h3 style="color: blue; text-decoration: underline; text-align: center;">Фестиваль - 2013</h3>
+    <a href="{% url 'photos_2013' %}"><h3 style="color: blue; text-decoration: underline; text-align: center;">Фестиваль
+        - 2013</h3></a>
     <div class="nurslide">
         {% for i in n %}
             <div class="sl_slide">
@@ -39,7 +42,8 @@
         {% endfor %}
     </div>
     <br>
-    <h3 style="color: blue; text-decoration: underline; text-align: center;">Фестиваль - 2014</h3>
+    <a href="{% url 'photos_2014' %}"><h3 style="color: blue; text-decoration: underline; text-align: center;">Фестиваль
+        - 2014</h3></a>
     <div class="nurslide">
         {% for i in n %}
             <div class="sl_slide">
