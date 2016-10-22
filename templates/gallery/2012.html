@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h3 style="color: blue; text-decoration: underline; text-align: center;">Фестиваль - 2011</h3>
+    <h3 style="color: blue; text-decoration: underline; text-align: center;">Фестиваль - 2012</h3>
     <br>
-
+<div style="width: 1200px !important;">
     {% for i in n %}
 
-        <img src="/static/img/photos_2012/{{ i }}.jpg" style="width: 300px; height: 300px; margin: 5px 0;">
+        <img src="/static/img/photos_2012/{{ i }}.jpg" style="width: 500px; margin: 5px 0;">
 
 
     {% endfor %}
-
+</div>
 {% endblock %}
